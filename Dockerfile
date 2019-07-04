@@ -1,9 +1,9 @@
 # BUILD PHASE
 FROM node:lts-alpine AS builder
 WORKDIR /usr/app
-COPY package.json .
+COPY package*.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 # RUN PHASE
